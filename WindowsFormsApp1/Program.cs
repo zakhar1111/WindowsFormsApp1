@@ -14,9 +14,11 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
+            Console.WriteLine("Hello" + DateTime.Now);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
         }
     }
 }
