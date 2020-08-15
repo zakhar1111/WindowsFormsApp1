@@ -12,9 +12,29 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        Particles a;
+        Canva Screen;
         public Form1()
         {
             InitializeComponent();
+            DefineCanvas();
+            a = new Particles();
+        }
+
+        void DefineCanvas()
+        {
+            Screen = new Canva();
+            this.Width = Screen.Width;
+            this.Height = Screen.Hieght;
+        }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {//here drawing
+            Screen.Show(e.Graphics);
+            a.Show(e.Graphics); //OK
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {//iteration
+            this.Refresh();
         }
     }
 }
